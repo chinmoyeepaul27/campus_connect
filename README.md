@@ -2,7 +2,7 @@
 
 A comprehensive campus management system built with React.js frontend and Django backend framework. This user-friendly platform helps students and faculty manage campus activities, events, clubs, and academic resources.
 
-## 🌟 Features
+## Features
 
 - **User Authentication**: Secure login/signup with password reset functionality
 - **Club Management**: Join clubs, manage memberships with payment integration
@@ -14,7 +14,7 @@ A comprehensive campus management system built with React.js frontend and Django
 - **Payment System**: Integrated payment processing for club memberships
 - **Activity Tracking**: Monitor user activities and engagement
 
-## 🚀 Tech Stack
+## Tech Stack
 
 ### Frontend
 
@@ -30,7 +30,7 @@ A comprehensive campus management system built with React.js frontend and Django
 - **Token Authentication**: Secure API authentication
 - **SQLite**: Database for development (easily configurable for production)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Campus_Connect/
@@ -111,7 +111,7 @@ npm run dev
 
 - `GET /api/notifications/` - Get all notifications
 
-## 🎨 Features Overview
+## Features Overview
 
 ### Student Features
 
@@ -148,7 +148,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -160,7 +160,7 @@ python manage.py migrate
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🚀 Deployment
+## Deployment
 
 ### Frontend (Vercel/Netlify)
 
@@ -178,4 +178,3 @@ npm run build
 ```
 
 
-**Built with ❤️ for the campus community**

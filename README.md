@@ -177,10 +177,5 @@ npm run build
 # Set up production database
 ```
 
-## 📞 Contact: joyontabiswas2022@gmail.com
-
-If you have any questions or suggestions, feel free to reach out!
-
----
 
 **Built with ❤️ for the campus community**

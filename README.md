@@ -52,7 +52,7 @@ Campus_Connect/
 └── README.md
 ```
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 
@@ -78,7 +78,7 @@ npm install
 npm run dev
 ```
 
-## 🌐 API Endpoints
+## API Endpoints
 
 ### Authentication
 
@@ -129,7 +129,7 @@ npm run dev
 - Send notifications
 - User management
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -156,7 +156,7 @@ python manage.py migrate
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 

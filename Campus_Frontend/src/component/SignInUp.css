@@ -1,0 +1,434 @@
+.signup-error-box {
+  background: #ffeaea;
+  color: #b71c1c;
+  border: 1px solid #ffbdbd;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 12px 0 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  box-shadow: 0 2px 8px #ffbdbd33;
+  word-break: break-word;
+}
+/* Custom select styling for Department and Batch dropdowns */
+.signinup-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.signinup-select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background: #f8f8f8
+    url('data:image/svg+xml;utf8,<svg fill="%23666" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>')
+    no-repeat right 16px center/20px 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.signinup-select:focus {
+  border-color: #007bff;
+}
+
+.signinup-select-wrapper label {
+  display: none;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --linear-grad: linear-gradient(to right, #141e30, #243b55);
+  --grad-clr1: #141e30;
+  --grad-clr2: #243b55;
+}
+
+body {
+  height: 100vh;
+  background: #f6f5f7;
+  font-family: "Poppins", sans-serif;
+}
+
+.signinup-outer-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f5f7;
+}
+
+.signinup-container {
+  position: relative;
+  width: 850px;
+  height: 500px;
+  background-color: #fff;
+  box-shadow: 25px 30px 55px #5557;
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.signinup-form-container {
+  position: absolute;
+  top: 0;
+  min-height: 100%;
+  background: #fff;
+  z-index: 2;
+  transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  overflow-y: auto;
+}
+
+.signinup-sign-in-container {
+  left: 0;
+  width: 60%;
+  opacity: 1;
+  z-index: 2;
+  transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.signinup-sign-up-container {
+  left: 0;
+  width: 60%;
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.signinup-container.right-panel-active .signinup-sign-in-container {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.signinup-container.right-panel-active .signinup-sign-up-container {
+  transform: translateX(70%);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Overlay container: right 40% by default, slides left on sign up */
+.signinup-overlay-container {
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1;
+}
+
+.signinup-container.right-panel-active .signinup-overlay-container {
+  transform: translateX(-150%);
+}
+
+/* Overlay panel styles */
+.signinup-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--linear-grad);
+  color: #fff;
+  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  display: flex;
+}
+
+.signinup-overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.signinup-overlay-left {
+  transform: translateX(-100%);
+  left: 0;
+}
+
+.signinup-overlay-right {
+  transform: translateX(0%);
+  right: 0;
+}
+
+.signinup-container.right-panel-active .signinup-overlay-left {
+  transform: translateX(0%);
+}
+
+.signinup-container.right-panel-active .signinup-overlay-right {
+  transform: translateX(100%);
+}
+
+#overlayBtn {
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 304px;
+  transform: translateX(-50%);
+  width: 143.67px;
+  height: 40px;
+  border: 1px solid #fff;
+  background: transparent;
+  border-radius: 20px;
+}
+
+.signinup-form-container form {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 50px 0 50px;
+  overflow: visible;
+}
+
+.signinup-form-container h1 {
+  color: var(--grad-clr1);
+}
+
+.signinup-social-container {
+  margin: 20px 0px;
+}
+
+.signinup-social-container a {
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 15px !important;
+  height: 40px;
+  width: 40px;
+}
+
+.signinup-form-container span {
+  font-size: 12px;
+}
+
+.signinup-infield {
+  position: relative;
+  margin: 4px 0px;
+  width: 100%;
+}
+
+.signinup-infield input {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #f3f3f3;
+  border: none;
+  outline: none;
+}
+
+.signinup-infield label {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: var(--linear-grad);
+  transition: 0.3s;
+}
+
+.signinup-infield input:focus ~ label {
+  width: 100%;
+}
+
+/* Match select styling to input fields in .signinup-infield */
+.signinup-infield-input {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #f3f3f3;
+  border: none;
+  outline: none;
+  font-size: 16px; /* Match Username/Email/Password font size */
+  color: #333;
+  border-radius: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.signinup-infield-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #b3c6ff;
+}
+
+.signinup-infield select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f3f3f3;
+  border: none;
+  color: #333;
+  padding: 12px 15px;
+  border-radius: 0;
+  margin: 0;
+  width: 100%;
+  outline: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px 20px;
+}
+
+.signinup-infield select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #b3c6ff;
+}
+
+.signinup-infield select option[value=""] {
+  color: #eaeaea !important;
+  font-style: italic;
+  opacity: 1;
+  filter: none;
+  font-weight: 10;
+  letter-spacing: 0.5px;
+}
+
+.signinup-form-container a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0px;
+}
+
+.signinup-form-container a.forgot {
+  padding-bottom: 3px;
+  border-bottom: 2px solid #eee;
+}
+
+.signinup-form-container button {
+  border-radius: 20px;
+  border: 1px solid var(--grad-clr1);
+  background: var(--grad-clr2);
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 17px;
+  transition: 80ms ease-in;
+}
+
+.signup-submit-btn {
+  margin-bottom: 32px;
+}
+
+.signinup-form-container button:hover {
+  background: #fff;
+  color: var(--grad-clr1);
+}
+
+.signinup-overlay-panel h1 {
+  color: #fff;
+}
+
+.signinup-form-container p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 25px 0px 35px;
+}
+
+.signinup-overlay-panel button {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  margin-top: 17px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.signinup-overlay-panel button:hover {
+  background: #fff;
+  color: var(--grad-clr1);
+}
+
+/* Back to Homepage Link Styles */
+.back-to-home {
+  margin-top: 50px;
+}
+
+.back-to-home a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-to-home a:hover {
+  color: #f0f0f0;
+  transform: translateX(5px);
+  text-decoration: underline;
+}
+
+@keyframes show {
+  0%,
+  50% {
+    opacity: 0;
+    z-index: 1;
+  }
+  50.1%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.btnScaled {
+  animation: scaleBtn 0.6s;
+}
+
+@keyframes scaleBtn {
+  0% {
+    width: 143.67px;
+  }
+  50% {
+    width: 250px;
+  }
+  100% {
+    width: 143.67px;
+  }
+}
+
+/* Hide email input placeholder when error is active */
+.email-error-active::placeholder {
+  color: transparent !important;
+}

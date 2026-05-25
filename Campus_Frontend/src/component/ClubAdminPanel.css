@@ -1,0 +1,413 @@
+/* Club Admin Panel Styles */
+.admin-panel-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+.admin-panel {
+  background: white;
+  border-radius: 15px;
+  width: 95%;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: adminPanelSlideIn 0.3s ease-out;
+}
+
+@keyframes adminPanelSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.admin-panel-header {
+  background: #1e3d58;
+  color: white;
+  padding: 20px 25px;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-panel-header h2 {
+  margin: 0;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.admin-panel-content {
+  padding: 25px;
+}
+
+/* Statistics Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #1e3d58;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stat-card.pending {
+  border-left-color: #ffc107;
+}
+
+.stat-card.approved {
+  border-left-color: #28a745;
+}
+
+.stat-card.active {
+  border-left-color: #007bff;
+}
+
+.stat-icon {
+  font-size: 24px;
+  color: #1e3d58;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+
+.stat-card.pending .stat-icon {
+  color: #ffc107;
+}
+
+.stat-card.approved .stat-icon {
+  color: #28a745;
+}
+
+.stat-card.active .stat-icon {
+  color: #007bff;
+}
+
+.stat-content h3 {
+  margin: 0 0 5px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e3d58;
+}
+
+.stat-content p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 40px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.section-header h3 {
+  margin: 0;
+  color: #1e3d58;
+  font-size: 20px;
+}
+
+.bulk-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.bulk-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.select-all-btn {
+  background: #6c757d;
+  color: white;
+}
+
+.select-all-btn:hover {
+  background: #5a6268;
+}
+
+.approve-btn {
+  background: #28a745;
+  color: white;
+}
+
+.approve-btn:hover:not(:disabled) {
+  background: #218838;
+}
+
+.reject-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.reject-btn:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.bulk-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.empty-state i {
+  font-size: 48px;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Requests List */
+.requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.request-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.request-card:hover {
+  border-color: #1e3d58;
+}
+
+.request-select {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 5px;
+}
+
+.request-select input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.request-info {
+  flex: 1;
+}
+
+.request-info h4 {
+  margin: 0 0 10px 0;
+  color: #1e3d58;
+  font-size: 18px;
+}
+
+.request-info p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.motivation {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #1e3d58;
+}
+
+.motivation strong {
+  color: #1e3d58;
+}
+
+.motivation p {
+  margin: 5px 0 0 0;
+  font-style: italic;
+  color: #555;
+}
+
+/* Payments Table */
+.payments-table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payments-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payments-table th,
+.payments-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.payments-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #1e3d58;
+}
+
+.payments-table tr:hover {
+  background: #f8f9fa;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status.completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.failed {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+}
+
+.error {
+  color: #dc3545;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-panel {
+    width: 98%;
+    max-height: 95vh;
+  }
+
+  .admin-panel-content {
+    padding: 15px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .stat-card {
+    padding: 15px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .bulk-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .request-card {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .payments-table {
+    font-size: 14px;
+  }
+
+  .payments-table th,
+  .payments-table td {
+    padding: 8px 10px;
+  }
+}

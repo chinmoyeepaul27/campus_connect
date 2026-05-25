@@ -1,0 +1,93 @@
+html,
+body,
+#root,
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure full height */
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ensure full width */
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-grow: 1; /* This makes sure the content stretches to take up remaining space */
+}
+
+/* Optional: Adjust body and container for a full-page layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #1e3d58;
+  padding: 20px 20px; /* More padding for space */
+  color: white;
+  width: 100%; /* Full width header */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Make the main content area take full width */
+main {
+  width: 100%; /* Ensure the main section takes full screen */
+  padding: 20px; /* Add spacing */
+  box-sizing: border-box; /* Include padding in width */
+}
+/* Style the container */
+.container {
+  width: 100%; /* Allow the container to use the full width */
+  margin: 0 auto; /* Center the content */
+  padding: 0 20px; /* Add some padding for inner content */
+}
+.page-container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*main {
+  flex: 1;
+}
+main {
+  padding-top: 2rem;
+}*/
+
+.welcome-heading {
+  margin-bottom: 1rem;
+}
+.welcome-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.features {
+  margin-top: 0;
+}
+.signup-btn {
+  display: block;
+  margin: 1.5rem auto 0 auto; /* Adds space above and centers the button */
+}
+.features {
+  margin-top: 2rem; /* Adds space above features */
+}
+/* Adjust the footer to fit the screen */
+footer {
+  background-color: #1e3d58;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%; /* Full-width footer */
+  margin-top: 60px;
+}
